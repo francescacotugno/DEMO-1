@@ -1,80 +1,81 @@
-var fragData = {
+const fragData = {
   "type": "FeatureCollection",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "id": "F01",
-        "luogo": "Treviri (Augusta Treverorum)",
-        "datazione": "II sec. d.C.",
-        "testo": "Deo VITIRIo L. Cassius Primus votum solvit",
-        "teonimo": "VITIRIVS",
-        "onomastica": "L. Cassius Primus"
+        "id": "1",
+        "luogo": "Köln",
+        "provincia": "Germania Inferior",
+        "datazione": "",  // se vuoi puoi aggiungerla dopo
+        "testo": "Deae Hariasae | HDTI Ulpius | Acutus dup(licarius) al(ae) | Sulp(iciae) sing(ularis) co(n)s(ularis) | cives Traianenses | v(otum) s(olvit) l(ibens) m(erito) Crispino et | Aeliano co(n)s(ulibus)",
+        "teonimo": "Hariasa"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [6.641, 49.756]  // [longitudine, latitudine]
+        "coordinates": [6.960279, 50.937531]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "F02",
-        "luogo": "Colonia Agrippinensis",
-        "datazione": "II–III sec. d.C.",
-        "testo": "MATRONIS AUFANIIS Secundina posuit",
-        "teonimo": "Matronae Aufaniae",
-        "onomastica": "Secundina"
+        "id": "2",
+        "luogo": "Noville",
+        "provincia": "Gallia Belgica",
+        "datazione": "",
+        "testo": "Deo Entarabo et Genio | (curiae) Ollodag(i) porticum quam | Velugnius Ingenuus promi|serat post obitum eius | Sollavius Victor fil(ius) adoptivos | fecit",
+        "teonimo": "Entarabus"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [6.959, 50.938]
+        "coordinates": [5.76104, 50.06386]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "F03",
-        "luogo": "Bonna",
-        "datazione": "I sec. d.C.",
-        "testo": "Arminius filius Segomari annorum XX h.s.e.",
-        "teonimo": null,
-        "onomastica": "Arminius, Segomarus"
+        "id": "3",
+        "luogo": "Niersbach",
+        "provincia": "Gallia Belgica",
+        "datazione": "",
+        "testo": "Deo Intarabo | ex imperio Q(uintus) | Solimarius | Bitus aedem | cum suis orna|mentis consa|cravit l(ibens) m(erito)",
+        "teonimo": "Entarabus"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [7.098, 50.737]
+        "coordinates": [6.740971, 49.940947]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "F04",
-        "luogo": "Aquisgranum",
-        "datazione": "II sec. d.C.",
-        "testo": "DEO MERCURIO et ROSMERTAE Marcus Verus posuit",
-        "teonimo": "Mercurius, Rosmerta",
-        "onomastica": "Marcus Verus"
+        "id": "4",
+        "luogo": "Inveresk",
+        "provincia": "Britannia",
+        "datazione": "",
+        "testo": "Apollini | Granno | Q(uintus) Lusius | Sabinia|nus | proc(urator) Aug(usti) | v(otum) s(olvit) l(ibens) m(erito)",
+        "teonimo": "Apollo Grannus"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [6.083, 50.775]
+        "coordinates": [-3.04176, 55.933217]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "F05",
-        "luogo": "Colonia Ulpia Traiana (Xanten)",
-        "datazione": "I–II sec. d.C.",
-        "testo": "DEO CAMVLO Severus Carantianus v.s.l.m.",
-        "teonimo": "Camulus",
-        "onomastica": "Severus Carantianus"
+        "id": "5",
+        "luogo": "Iversheim",
+        "provincia": "Germania Inferior",
+        "datazione": "",
+        "testo": "In h(onorem) d(omus) d(ivinae) | Hlutenae sacrum | pro salute Imp(eratoris) Caes(aris) | Severi Alexandri Pii | Fel(icis) Invicti Aug(usti) et Iul(iae) | Mamae(a)e matris Aug(usti) n(ostri) | vexillat(io) leg(ionis) I M(inerviae) Sever(ianae) | P(iae) F(idelis) agent(e) in c[alcariis((?))",
+        "teonimo": "Hlutena"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [6.452, 51.661]
+        "coordinates": [6.76985, 50.582024]
       }
     }
   ]
 };
+
