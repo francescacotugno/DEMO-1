@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>FRAG – Mini mappa teonimi</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    .popup-title {
+      font-weight: bold;
+    }
+    .popup-teonimo {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <!-- I tuoi dati FRAG in formato GeoJSON -->
+  <script src="data.js"></script>
+
+  <script>
+    // Crea la mappa centrata orientativamente su Gallia Belgica / Germanie
+    const map = L.map("map").setView([50.3, 6.6], 6);
+
+    // Sfondo OpenStreetMap
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Stile base per i punti
+    function pointStyle(feature) {
+      return {
+        radius: 7,
+        fillColor: "#7b3294",
+        color: "#3f007d",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.85
+      };
+    }
+
+    // Popup per ogni iscrizione
+    function onEachFeature(feature, layer) {
+      if (!feature.properties) return;
+
+      const p = feature.properties;
+
+      const popupContent = `
+        <div class="popup">
+          <div class="popup-title">${p.luogo || "Luogo sconosciuto"}</div>
+          <div><span class="popup-teonimo">${p.teonimo || "—"}</span></div>
+          <div><small>${p.datazione || ""}</small></div>
+          <hr />
+          <div><strong>Testo:</strong><br>${p.testo || ""}</div>
+          <div><strong>Onomastica:</strong> ${p.onomastica || "—"}</div>
+          <div><small>ID: ${p.id || ""}</small></div>
+        </div>
+      `;
+
+      layer.bindPopup(popupContent);
+    }
+
+    // Aggiungi i dati alla mappa (variabile fragData definita in data.js)
+    L.geoJSON(fragData, {
+      pointToLayer: (feature, latlng) => L.circleMarker(latlng, pointStyle(feature)),
+      onEachFeature: onEachFeature
+    }).addTo(map);
+  </script>
+</body>
+</html>
